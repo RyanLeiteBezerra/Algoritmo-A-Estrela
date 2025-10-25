@@ -1,0 +1,9 @@
+📊 COMPARAÇÃO ENTRE RESULTADOS
+
+Custo total:      C=115 | Validador=115 | ✅ Iguais
+Nos visitados:    C=386 | Validador=386 | ✅ Iguais
+Tamanho caminho:  C=116 | Validador=116 | ✅ Iguais
+
+Caminho: ✅ Idêntico
+
+✅ Comparação concluída.
