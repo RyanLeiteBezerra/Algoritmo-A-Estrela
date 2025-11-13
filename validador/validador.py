@@ -50,7 +50,7 @@ def a_star(grid, start, goal):
     return None, len(visited), None
 
 def main():
-    grid, start, goal = load_grid("validador/entradas/labirinto1.txt")
+    grid, start, goal = load_grid("validador/entradas/labirinto2.txt")
     path, visited_count, total_cost = a_star(grid, start, goal)
 
     with open("validador/saidas/resultado_validador.txt", "w") as f:
@@ -63,7 +63,7 @@ def main():
             f.write(" -> ".join([f"({x},{y})" for x,y in path]))
         else:
             f.write("Nenhum caminho encontrado.\n")
-            f.write(f"Nós visitados: {visited_count}\n")
+            f.write(f"Nos visitados: {visited_count}\n")
 
     print("✅ Validação concluída! Resultados salvos em 'resultado_validador.txt'")
 

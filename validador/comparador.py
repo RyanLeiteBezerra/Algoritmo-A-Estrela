@@ -6,7 +6,7 @@ def comparar_resultados(arquivo_c, arquivo_validador, saida_relatorio="validador
             conteudo = f.read()
 
         custo_match = re.search(r'Custo total:\s*(\d+)', conteudo)
-        visitados_match = re.search(r'Nos visitados:\s*(\d+)', conteudo) # Para o arquivo validador
+        visitados_match = re.search(r'Nos visitados:\s*(\d+)', conteudo)
         tamanho_match = re.search(r'Tamanho do caminho:\s*(\d+)', conteudo)
         caminho_coords = re.findall(r'\((\d+),\s*(\d+)\)', conteudo)
         caminho_coords = [(int(x), int(y)) for x, y in caminho_coords]
@@ -29,7 +29,7 @@ def comparar_resultados(arquivo_c, arquivo_validador, saida_relatorio="validador
     relatorio.append(f"Nos visitados:    C={c_visitados} | Validador={v_visitados} | {'✅ Iguais' if (c_visitados is not None and v_visitados is not None and c_visitados == v_visitados) else '⚠️ Diferentes'}")
     relatorio.append(f"Tamanho caminho:  C={c_tam} | Validador={v_tam} | {'✅ Iguais' if (c_tam is not None and v_tam is not None and c_tam == v_tam) else '❌ Diferentes'}")
 
-    # Comparação do caminho completo
+        # Comparação do caminho completo
     if c_caminho == v_caminho:
         relatorio.append("\nCaminho: ✅ Idêntico")
     else:
@@ -50,7 +50,6 @@ def comparar_resultados(arquivo_c, arquivo_validador, saida_relatorio="validador
             else:
                 relatorio.append(f"  Caminho Validador extra: {v_caminho[min_len:]}")
 
-
     relatorio.append("\n✅ Comparação concluída.\n")
 
     # Escreve o relatório em arquivo
@@ -62,6 +61,6 @@ def comparar_resultados(arquivo_c, arquivo_validador, saida_relatorio="validador
     print(f"\n📁 Relatório salvo em: {saida_relatorio}")
 
 # Exemplo de uso:
-resultado_c = "codigo_c/saidas/resultado_c.txt"
+resultado_c = "validador/saidas/resultado_c.txt"
 resultado_validador = "validador/saidas/resultado_validador.txt"
 comparar_resultados(resultado_c, resultado_validador)

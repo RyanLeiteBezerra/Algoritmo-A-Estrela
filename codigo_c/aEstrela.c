@@ -57,6 +57,7 @@ void mark_path_on_grid(int start_x, int start_y, int goal_x, int goal_y) {
 
     // Marca também o nó inicial como parte do caminho
     grid[start_x][start_y].is_path = 1;
+    salvar_estado("saidas/grid.txt", start_x, start_y, goal_x, goal_y);
 }
 
 // ================================
